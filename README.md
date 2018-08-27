@@ -461,9 +461,9 @@ document.documentElement.clientHeight + window.scrollY >= document.documentEleme
 
 ---
 
-### Current URL (获取当前页面URL)
+### Current URL (获取当前页面 URL)
 
-- 使用 window.location.href 获取当前页面URL。
+- 使用 window.location.href 获取当前页面 URL。
 
 ```
 const currentUrl = _ => window.location.href;
@@ -504,9 +504,9 @@ y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
 
 ---
 
-### Redirect to URL (重定向到URL)
+### Redirect to URL (重定向到 URL)
 
-- 使用 window.location.href 或 window.location.replace() 重定向到 url 。 传递第二个参数来模拟链接点击(true – 默认值)或HTTP重定向(false)。
+- 使用 window.location.href 或 window.location.replace() 重定向到 url 。 传递第二个参数来模拟链接点击(true – 默认值)或 HTTP 重定向(false)。
 
 ```
 const redirect = (url, asLink = true) =>
@@ -518,7 +518,7 @@ asLink ? window.location.href = url : window.location.replace(url);
 
 ### Scroll to top (回到顶部)
 
-- 使用 document.documentElement.scrollTop 或 document.body.scrollTop 获取到顶部距离。从顶部滚动一小部分距离。使用window.requestAnimationFrame() 来实现滚动动画
+- 使用 document.documentElement.scrollTop 或 document.body.scrollTop 获取到顶部距离。从顶部滚动一小部分距离。使用 window.requestAnimationFrame() 来实现滚动动画
 
 ```
 const scrollToTop = _ => {
@@ -534,9 +534,11 @@ window.scrollTo(0, c - c / 8);
 ---
 
 ## Date 日期
+
 > Need More Click Here
 
 > [https://github.com/MrRiven/DailyArrangement/blob/master/utils/utils.js]
+
 ---
 
 ### Get days difference between dates (获取两个日期之间相差的天数)
@@ -549,12 +551,14 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateIni
 ```
 
 ---
+
 ## Function 函数
+
 ---
 
 ### Chain asynchronous functions (链式调用异步函数)
 
-- 循环遍历包含异步事件的函数数组，每次异步事件完成后调用  next 。
+- 循环遍历包含异步事件的函数数组，每次异步事件完成后调用 next 。
 
 ```
 const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); };
@@ -571,7 +575,7 @@ next => { console.log('2 seconds'); }
 
 ### Curry (函数式编程术语：柯里化)
 
-- 使用递归。 如果提供的参数(args)数量足够，调用传递函数 fn 。否则返回一个柯里化后的函数 fn ，期望剩下的参数。如果你想柯里化一个接受可变参数数量的函数(可变参数数量的函数，例如 Math.min() )，你可以选择将参数个数传递给第二个参数  arity。
+- 使用递归。 如果提供的参数(args)数量足够，调用传递函数 fn 。否则返回一个柯里化后的函数 fn ，期望剩下的参数。如果你想柯里化一个接受可变参数数量的函数(可变参数数量的函数，例如 Math.min() )，你可以选择将参数个数传递给第二个参数 arity。
 
 ```
 const curry = (fn, arity = fn.length, ...args) =>
@@ -646,7 +650,6 @@ console.log('I woke up after 1 second.');
 
 ---
 
-
 ## Math 数学方法
 
 ---
@@ -660,7 +663,8 @@ const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
 // collatz(8) --> 4
 // collatz(5) --> 16
 ```
-> 注：考拉兹猜想(英语：Collatz conjecture)，又称为奇偶归一猜想、3n＋1猜想、冰雹猜想、角谷猜想、哈塞猜想、乌拉姆猜想或叙拉古猜想，是指对于每一个正整数，如果它是奇数，则对它乘3再加1，如果它是偶数，则对它除以2，如此循环，最终都能够得到1。 – 维基百科。
+
+> 注：考拉兹猜想(英语：Collatz conjecture)，又称为奇偶归一猜想、3n ＋ 1 猜想、冰雹猜想、角谷猜想、哈塞猜想、乌拉姆猜想或叙拉古猜想，是指对于每一个正整数，如果它是奇数，则对它乘 3 再加 1，如果它是偶数，则对它除以 2，如此循环，最终都能够得到 1。 – 维基百科。
 
 ---
 
@@ -672,6 +676,7 @@ const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 // distance(1,1, 2,3) -> 2.23606797749979
 ```
+
 ---
 
 ### Divisible by number (可以被某个数整除)
@@ -682,16 +687,18 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 // isDivisible(6,3) -> true
 ```
+
 ---
 
 ### Even or odd number (判断奇偶数)
 
-- 使用模运算符(%)来检查数字是奇数还是偶数。如果数字是偶数，则返回 true ，如果是奇数，则返回 false 
+- 使用模运算符(%)来检查数字是奇数还是偶数。如果数字是偶数，则返回 true ，如果是奇数，则返回 false
 
 ```
 const isEven = num => num % 2 === 0;
 // isEven(3) -> false
 ```
+
 ---
 
 ### Factorial (阶乘)
@@ -702,6 +709,7 @@ const isEven = num => num % 2 === 0;
 const factorial = n => n < = 1 ? 1 : n * factorial(n - 1);
 // factorial(6) -> 720
 ```
+
 ---
 
 ### Fibonacci array generator (斐波纳契数组发生器)
@@ -713,6 +721,7 @@ const fibonacci = n =>
 Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -> [0,1,1,2,3]
 ```
+
 ---
 
 ### Greatest common divisor (GCD) (最大公约数)
@@ -723,18 +732,21 @@ Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i -
 const gcd = (x, y) => !y ? x : gcd(y, x % y);
 // gcd (8, 36) -> 4
 ```
+
 ---
 
 ### Hamming distance (汉明距离)
 
-- 使用XOR运算符( ^ )查找这两个数字之间的位差，使用 toString(2) 转换为二进制字符串。使用 match(/1/g) 计算并返回字符串中 1 的数量。
+- 使用 XOR 运算符( ^ )查找这两个数字之间的位差，使用 toString(2) 转换为二进制字符串。使用 match(/1/g) 计算并返回字符串中 1 的数量。
 
 ```
 const hammingDistance = (num1, num2) =>
 ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -> 1
 ```
+
 > 注：在信息论中，两个等长字符串之间的汉明距离(英语：Hamming distance)是两个字符串对应位置的不同字符的个数。换句话说，它就是将一个字符串变换成另外一个字符串所需要替换的字符个数。- 维基百科
+
 ---
 
 ### Percentile (百分比)
@@ -742,10 +754,11 @@ const hammingDistance = (num1, num2) =>
 - 使用 Array.reduce() 来计算有多少数字小于等于该值，并用百分比表示
 
 ```
-const percentile = (arr, val) => 
+const percentile = (arr, val) =>
 100 * arr.reduce((acc,v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
 // percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
 ```
+
 ---
 
 ### Powerset (幂集)
@@ -757,6 +770,7 @@ const powerset = arr =>
 arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
+
 ---
 
 ### Round number to n digits (精确的几位小数)
@@ -767,6 +781,7 @@ arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 // round(1.005, 2) -> 1.01
 ```
+
 ---
 
 ### Standard deviation (标准偏差)
@@ -784,14 +799,16 @@ arr.reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
 // standardDeviation([10,2,38,23,38,23,21]) -> 13.284434142114991 (sample)
 // standardDeviation([10,2,38,23,38,23,21], true) -> 12.29899614287479 (population)
 ```
+
 ---
 
 ## Media 媒体
+
 ---
 
 ### Speech synthesis (语音合成，实验阶段)
 
-- 使用 SpeechSynthesisUtterance.voice 和 indow.speechSynthesis.getVoices() 将消息转换为语音。使用  window.speechSynthesis.speak() 播放消息。
+- 使用 SpeechSynthesisUtterance.voice 和 indow.speechSynthesis.getVoices() 将消息转换为语音。使用 window.speechSynthesis.speak() 播放消息。
 
 ```
 const speak = message => {
@@ -801,4 +818,411 @@ window.speechSynthesis.speak(msg);
 };
 // speak('Hello, World') -> plays the message
 ```
+
 ---
+
+## Node
+
+---
+
+### Write JSON to file (将 JSON 写到文件)
+
+- 使用 fs.writeFile()，模板字面量 和 JSON.stringify() 将 json 对象写入到 .json 文件中。
+
+```
+const fs = require('fs');
+const jsonToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
+// jsonToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
+```
+
+---
+
+## Object 对象
+
+---
+
+### Object from key-value pairs (根据键值对创建对象)
+
+- 使用 Array.reduce() 来创建和组合键值对。
+
+```
+const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
+// objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
+```
+
+---
+
+### Shallow clone object (浅克隆对象)
+
+- 使用 Object.assign() 和一个空对象({})来创建原始对象的浅拷贝
+
+```
+const shallowClone = obj => Object.assign({}, obj);
+/*
+const a = { x: true, y: 1 };
+const b = shallowClone(a);
+a === b -> false
+*/
+```
+
+---
+
+## String 字符串
+
+---
+
+### Anagrams of string (with duplicates) (字符串的排列组合，带有重复项)
+
+- 使用递归。 对于给定字符串中的每个字母，为其余字母创建所有部分字母。 使用 Array.map() 将字母与每个部分字母组合在一起，然后使用 Array.reduce() 将所有字母组合到一个数组中。 基本情况是字符串 length 等于 2 或 1 。
+
+```
+const anagrams = str => {
+if (str.length < = 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
+return str.split('').reduce((acc, letter, i) =>
+acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
+};
+// anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
+```
+
+---
+
+### Capitalize first letter of every word (大写每个单词的首字母)
+
+- 使用 replace() 来匹配每个单词的第一个字符，并使用 toUpperCase() 来将其大写。
+
+```
+const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+// capitalizeEveryWord('hello world!') -> 'Hello World!'
+```
+
+---
+
+### Capitalize first letter (首字母大写)
+
+- 使用解构和 toUpperCase() 大写第一个字母，...rest 第一个字母后获得字符数组，然后 Array.join('')再次使它成为一个字符串。 省略 lowerRest 参数以保持字符串的剩余部分不变，或者将其设置为 true 这会将字符串的剩余部分转换为小写。
+
+```
+const capitalize = ([first,...rest], lowerRest = false) =>
+first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
+// capitalize('myName') -> 'MyName'
+// capitalize('myName', true) -> 'Myname'
+```
+
+---
+
+### Check for palindrome (检查回文)
+
+- 使用 toLowerCase() 转换字符串，并使用 replace() 从中删除非字母数字字符。 然后，在将其转换为 tolowerCase() 之后，将 split('') 为单独的字符，reverse() ，join('')并与原始非反转字符串进行比较。
+
+```
+const palindrome = str => {
+const s = str.toLowerCase().replace(/[\W_]/g,'');
+return s === s.split('').reverse().join('');
+}
+// palindrome('taco cat') -> true
+```
+
+---
+
+### Reverse a string (反转一个字符串)
+
+- 使用数组解构和 Array.reverse() 来反转字符串中字符的顺序。使用 join('')合并字符串。
+
+```
+const reverseString = str => [...str].reverse().join('');
+// reverseString('foobar') -> 'raboof'
+```
+
+---
+
+### Sort characters in string (alphabetical) (按字母顺序排列字符串)
+
+- 使用 split('') 分割字符串，通过 localeCompare() 排序字符串 Array.sort() ，使用 join('') 进行重组。
+
+```
+const sortCharactersInString = str =>
+str.split('').sort((a, b) => a.localeCompare(b)).join('');
+// sortCharactersInString('cabbage') -> 'aabbceg'
+```
+
+---
+
+### Truncate a String (截断一个字符串)
+
+- 确定字符串的 length 是否大于 num。 返回截断所需长度的字符串，用 ... 附加到结尾或原始字符串。
+
+```
+const truncate = (str, num) =>
+str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
+// truncate('boomerang', 7) -> 'boom...'
+```
+
+---
+
+## Utility 实用函数
+
+---
+
+### Escape regular expression (转义正则表达式)
+
+- 使用 replace() 来转义特殊字符。
+
+```
+const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+// escapeRegExp('(test)') -> \\(test\\)
+```
+
+---
+
+### Get native type of value (获取原生类型的值)
+
+- 返回值小写的构造函数名称，如果值为 undefined 或 null ，则返回 “undefined” 或 “null”。
+
+```
+const getType = v =>
+v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
+// getType(new Set([1,2,3])) -> "set"
+```
+
+---
+
+### Hexcode to RGB (Hex 转 RGB)
+
+- 使用 Array.slice() , Array.map() 和 match() 将十六进制颜色代码(前缀为#)转换为 RGB 值的字符串。
+
+```
+const hexToRgb = hex => `rgb(${hex.slice(1).match(/.{2}/g).map(x => parseInt(x, 16)).join()})`
+// hexToRgb('#27ae60') -> 'rgb(39,174,96)'
+```
+
+---
+
+### Is array(是否为数组)
+
+- 使用 Array.isArray() 来检查一个值是否为一个数组
+
+```
+const isArray = val => !!val && Array.isArray(val);
+// isArray(null) -> false
+// isArray([1]) -> true
+```
+
+---
+
+### Is boolean(是否为布尔值)
+
+- 使用 typeof 来检查一个值是否为一个布尔值。
+
+```
+const isBoolean = val => typeof val === 'boolean';
+// isBoolean(null) -> false
+// isBoolean(false) -> true
+```
+
+---
+
+### Is function(是否为函数)
+
+- 使用 typeof 来检查一个值是否为一个函数。
+
+```
+const isFunction = val => val && typeof val === 'function';
+// isFunction('x') -> false
+// isFunction(x => x) -> true
+```
+
+---
+
+### Is number(是否为数字)
+
+- 使用 typeof 来检查一个值是否为一个数字
+
+```
+const isNumber = val => typeof val === 'number';
+// isNumber('1') -> false
+// isNumber(1) -> true
+```
+
+---
+
+### Is string(是否为字符串)
+
+- 使用 typeof 来检查一个值是否为一个字符串。
+
+```
+const isString = val => typeof val === 'string';
+// isString(10) -> false
+// isString('10') -> true
+```
+
+---
+
+### Is symbol(是否为 symbol)
+
+- 使用 typeof 来检查一个值是否为一个 symbol 。
+
+```
+const isSymbol = val => typeof val === 'symbol';
+// isSymbol('x') -> false
+// isSymbol(Symbol('x')) -> true
+```
+
+---
+
+### Measure time taken by function (计算函数执行所花费的时间)
+
+- 使用 console.time() 和 console.timeEnd() 来测量开始和结束时间之间的差，以确定回调执行的时间。
+
+```
+const timeTaken = callback => {
+console.time('timeTaken');
+const r = callback();
+console.timeEnd('timeTaken');
+return r;
+};
+// timeTaken(() => Math.pow(2, 10)) -> 1024
+// (logged): timeTaken: 0.02099609375ms
+```
+
+---
+
+### Number to array of digits (将数字转化为整数数组)
+
+- 将数字转换为字符串，使用 split() 来转换构建一个数组。 使用 Array.map() 和 parseInt() 将每个值转换为整数。
+
+```
+const digitize = n => (''+n).split('').map(i => parseInt(i));
+// digitize(2334) -> [2, 3, 3, 4]
+```
+
+---
+
+### Ordinal suffix of number (数字序号的后缀)
+
+- 使用模运算符(%)来查找各位和十位的值。查找哪些序号模式数字匹配。如果数字在十位模式中找到，请使用十位的序数。
+
+```
+const toOrdinalSuffix = num => {
+const int = parseInt(num), digits = [(int % 10), (int % 100)],
+ordinals = ['st', 'nd', 'rd', 'th'], oPattern = [1, 2, 3, 4],
+tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
+};
+// toOrdinalSuffix("123") -> "123rd"
+```
+
+---
+
+### Random integer in range (在指定的范围内生成一个随机整数)
+
+- 使用 Math.random() 生成一个随机数并将其映射到所需的范围，使用 Math.floor() 使其成为一个整数。
+
+```
+const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+// randomIntegerInRange(0, 5) -> 2
+```
+
+---
+
+### Random number in range (在指定的范围内生成一个随机数)
+
+- 使用 Math.random() 生成一个随机值，使用乘法将其映射到所需的范围。
+
+```
+const randomInRange = (min, max) => Math.random() * (max - min) + min;
+// randomInRange(2,10) -> 6.0211363285087005
+```
+
+---
+
+### RGB to hexadecimal(RGB 转 hex)
+
+- 使用按位左移运算符(<<)和 toString(16) 将给定的 RGB 参数转换为十六进制字符串，然后使用 padStart(6,'0') 得到一个 6 位的十六进制值。
+
+```
+const rgbToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+// rgbToHex(255, 165, 1) -> 'ffa501'
+```
+
+---
+
+### Swap values of two variables (交换两个变量的值)
+
+- 使用数组解构来交换两个变量之间的值。
+
+```
+[varA, varB] = [varB, varA];
+// [x, y] = [y, x]
+```
+
+---
+
+### URL parameters(网址参数)
+
+- 通过适当的正则表达式，使用 match() 来获得所有的键值对， Array.reduce() 来映射和组合成一个单一的对象。将 location.search 作为参数传递给当前 url。
+
+```
+const getUrlParameters = url =>
+url.match(/([^?=&]+)(=([^&]*))/g).reduce(
+(a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
+);
+// getUrlParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
+```
+
+---
+
+### UUID generator (UUID 生成器)
+
+- 使用 crypto API 生成符一个 UUID，符合 RFC4122 版本 4 。
+
+```
+const uuid = _ =>
+([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+(c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+);
+// uuid() -> '7982fcfe-5721-4632-bede-6000885be57d'
+```
+
+---
+
+### Validate email(邮箱验证)
+
+- 使用正则表达式来检查电子邮件是否有效。如果电子邮件有效，则返回 true ，否则返回 false 。
+
+```
+const validateEmail = str =>
+/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
+// validateEmail(mymail@gmail.com) -> true
+```
+
+---
+
+### Validate number (数字验证)
+
+- 使用 !isNaN 和 parseFloat() 来检查参数是否是一个数字。使用 isFinite() 来检查数字是否是有限数。使用 Number() 来检查强制转换是否成立。
+
+```
+const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
+// validateNumber('10') -> true
+```
+
+---
+
+### Value or default (值或者默认值)
+
+- 返回 value ，如果传递的值是 falsy ，则返回默认值。
+
+```
+const valueOrDefault = (value, d) => value || d;
+// valueOrDefault(NaN, 30) -> 30
+```
+
+---
+
+## 欢迎指正不足之处
+
+## Thanks
+
+## 感谢
+> http://www.css88.com/archives/8748#speech-synthesis-experimental
+
