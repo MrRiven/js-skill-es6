@@ -1222,7 +1222,3 @@ const valueOrDefault = (value, d) => value || d;
 ## 欢迎指正不足之处
 
 ## Thanks
-
-## 感谢
-> http://www.css88.com/archives/8748#speech-synthesis-experimental
-
